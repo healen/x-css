@@ -1,0 +1,106 @@
+@import './common/var.css';
+
+.x-stepper {
+  font-size: 0;
+
+  &__minus,
+  &__plus {
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    background-color: $primary;
+    border: 2px solid $primary;
+    position: relative;
+    padding: 5px;
+    vertical-align: middle;
+
+    &::before {
+      width: 12px;
+      border-radius: 2px;
+      height: 2px;
+    }
+
+    &::after {
+      width: 2px;
+       border-radius: 2px;
+       height: 12px;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+    }
+
+
+    &--disabled {
+      visibility: hidden;
+      background-color: $background-color;
+     border-color:$background-color;
+
+      &::before,
+      &::after {
+        background-color: $gray;
+      }
+    }
+
+    &--disabled:active {
+      background-color: $background-color;
+    }
+  }
+
+
+
+  &__minus {
+     background-color: #fff;
+
+    color:$primary
+
+     &::before,
+     &::after {
+         background-color: $primary!important;
+      }
+
+    &::after {
+      display: none;
+    }
+  }
+
+
+
+  &__input {
+    background: none;
+    border: none;
+    width: 33px;
+    height: 26px;
+    padding: 1px;
+    box-sizing: content-box;
+    color: $gray-darker;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-appearance: none;
+
+     &--vhide{
+        visibility: hidden;
+      }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &__minus{
+   &::before{
+    background-color: $primary;
+    }
+
+    }
+}
